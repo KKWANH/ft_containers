@@ -1,43 +1,43 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: kimkwanho <kimkwanho@student.42.fr>        +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/12/12 12:29:23 by kimkwanho         #+#    #+#              #
-#    Updated: 2022/01/09 15:47:04 by kimkwanho        ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME		=	ft_containers
 
-COMP		=	clang++ -Wall -Wextra -Werror -g3 -fsanitize=address -std=c++98
-SRCS		=	main/main.cpp \
-				main/vector.cpp \
-				main/stack.cpp \
-				main/map.cpp \
-				main/list.cpp
-OBJS		=	$(SRCS:.cpp=.o)
+COMP		=	clang++
+FLAG		=	-Wall -Wextra -Werror -std=c++98
+SRCS		=	main/main.cpp
 
-.cpp.o:
-	@printf "\033[34m[FT_CONTAINERS]\033[0m Generating file : "
-	@$(COMP) -c $< -o $(<:.cpp=.o)
-	@sleep 0.1 && printf "\033[33m." && sleep 0.1 && printf "\033[33m." && sleep 0.1 && printf "\033[33m. "
-	@printf "\033[32mOK\033[0m\n"
+PCON		=	containers/
+HCON		=	vector.hpp \
+				list.hpp \
+				stack.hpp \
+				map.hpp
+
+PTEM		=	templates/
+HTEM		=	type1_or_type2.hpp \
+				stl_like.hpp
+
+PITE		=	iterators/
+HITE		=	vector_iterator.hpp \
+				rev_vector_iterator.hpp \
+				list_iterator.hpp \
+				rev_list_iterator.hpp \
+				map_iterator.hpp \
+				rev_map_iterator.hpp
+
+OBJS		=	$(SRCS:.cpp=.o)
 
 $(NAME): $(OBJS)
 	@printf "\033[34m[FT_CONTAINERS]\033[0m Compiling file  : "
-	@$(COMP) -o $(NAME) $(SRCS)
+	@$(COMP) -o $(NAME) $(FLAG) $(OBJS)
 	@sleep 0.1 && printf "\033[33m." && sleep 0.1 && printf "\033[33m." && sleep 0.1 && printf "\033[33m. "
 	@printf "\033[32mOK\033[0m\n"
 	@make clean
 	@printf "\n"
 	@printf "\033[34m[FT_CONTAINERS]\033[0m Now \033[32mFT_CONTAINERS\033[0m is executable. Launch this with \033[33m./ft_containers\033[0m"
 
-all:
+all: 
 	@make fclean
-	@$(NAME)
+	$(NAME)
+
+$(OBJS): $(addprefix $(PCON), $(HCON)) $(addprefix $(PTEM), $(HTEM)) $(addprefix $(PITE), $(HITE))
 
 clean:
 	@printf "\033[34m[FT_CONTAINERS]\033[0m Removing object : "
@@ -45,13 +45,18 @@ clean:
 	@sleep 0.1 && printf "\033[33m." && sleep 0.1 && printf "\033[33m." && sleep 0.1 && printf "\033[33m. "
 	@printf "\033[32mOK\033[0m\n"
 
-fclean:
-	@make clean
+fclean: clean
 	@printf "\033[34m[FT_CONTAINERS]\033[0m Removing result : "
 	@rm -rf $(NAME)
 	@sleep 0.1 && printf "\033[33m." && sleep 0.1 && printf "\033[33m." && sleep 0.1 && printf "\033[33m. "
 	@printf "\033[32mOK\033[0m\n"
 
 re: fclean all
+
+%.o: %.cpp
+	@printf "\033[34m[FT_CONTAINERS]\033[0m Generating file : "
+	@$(COMP) $(FLAG) -o $@ -c $<
+	@sleep 0.1 && printf "\033[33m." && sleep 0.1 && printf "\033[33m." && sleep 0.1 && printf "\033[33m. "
+	@printf "\033[32mOK\033[0m\n"
 
 
