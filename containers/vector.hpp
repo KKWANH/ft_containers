@@ -19,7 +19,7 @@ namespace					ft
 	*
 	* - Coplien form:
 	* (constructor):		Construct vector
-	* (destructor):			 Destruct vector
+	* (destructor):			Destruct vector
 	* operator=:			Assign vector
 	*
 	* - Iterators:
@@ -83,7 +83,7 @@ namespace					ft
 		/* ------------------------------------------------------------- */
 		/* ------------------------- ATTRIBUTES ------------------------ */
 		private:	
-			Alloc			_alloc;			 // Copy of allocator_type object
+			Alloc			_alloc;			// Copy of allocator_type object
 			pointer			_vector;		// Pointer on an array of T values
 			size_type		_size;			// Number of T values inside the vector
 			size_type		_capacity;		// Capacity allocated (can be greater than size)
