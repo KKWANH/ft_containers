@@ -1,0 +1,44 @@
+          ******************
+          ** ROTATION AVL **
+          ******************
+
+rotate left: put the first under the left side of the second        
+rotate right: put the first under the right side of the second
+
+________________________________________
+|             top   |                  |
+| caseN  =>   / \   |      moves       |
+|            x   y  |                  |
+|___________________|__________________|
+|       case1       |                  |
+|                   |                  |
+|  x                | rotate left      |
+|   \               |                  |
+|   top             |                  |
+|     \             |                  |
+|      y            |                  |
+|___________________|__________________|
+|       case2       |                  |
+|                   |                  |
+|      y            | rotate right     |
+|     /             |                  |
+|   top             |                  |
+|   /               |                  |
+|  x                |                  |
+|___________________|__________________|
+|       case2       |                  |
+|                   |                  |
+|  x                |                  |
+|   \               | rotate left      |
+|    y              | rotate right     |
+|   /               |                  |
+| top               |                  |
+|___________________|__________________|
+|       case3       |                  |
+|                   |                  |
+|    y              |                  |
+|   /               | rotate right     |
+|  x                | rotate left      |
+|   \               |                  |
+|   top             |                  |
+|___________________|__________________|
