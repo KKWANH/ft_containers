@@ -1,26 +1,14 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/06/28 14:50:21 by adbenoit          #+#    #+#              #
-#    Updated: 2021/09/27 14:30:23 by adbenoit         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-FT_NAME 	=	ft_containers
-STL_NAME 	=	stl_containers
-TESTER_NAME	=	Containers tester
+FT_NAME 		=	ft_containers
+STL_NAME 		=	stl_containers
+TESTER_NAME		=	Containers tester
 
 
-SRCS_PATH	=	test_srcs/
-SRCS		=	main.cpp 
+SRCS_PATH		=	test_srcs/
+SRCS			=	main.cpp 
 
-CC			=	clang++
+CC				=	c++
 
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
+CFLAGS			=	-Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 
 FT_OBJ_PATH		=	ft_obj/
 STL_OBJ_PATH	=	obj/

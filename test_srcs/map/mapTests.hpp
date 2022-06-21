@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   mapTests.hpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/24 02:53:53 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/09/28 13:29:11 by adbenoit         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef MAPTESTS_HPP
 # define MAPTESTS_HPP
 
@@ -17,6 +5,7 @@
 # include "modifiers.map.hpp"
 # include "operators.map.hpp"
 # include "observers.map.hpp"
+# include "alotof.map.hpp"
 
 void    title(std::string name);
 
@@ -51,6 +40,9 @@ void    mapTests(ft::map<Key, Value>& map)
 	print(copy, 0); // 0#
 	copy.clear();
 	print(map, 1); // 1#
+
+				/* ALOTOF */
+	ft_alotof(map);
 	std::cout << std::endl;
 }
 

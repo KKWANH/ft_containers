@@ -301,6 +301,8 @@ namespace		ft
 			this->_alloc.construct(&this->_begin[this->_size], _val);
 			this->_alloc.deallocate(tmp, this->_capacity);
 			++this->_size;
+			// if (this->_capacity <= this->_size)
+			// 	this->_capacity *= 2;
 			this->_capacity = this->_size;
 		}
 		

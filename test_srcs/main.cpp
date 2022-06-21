@@ -1,19 +1,9 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/30 15:46:31 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/09/28 18:51:21 by adbenoit         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "containers.hpp"
 #include "map/mapTests.hpp"
 #include "vector/vectorTests.hpp"
 #include "stack/stackTests.hpp"
+
+#include <time.h>
 
 void    title(std::string name)
 {
@@ -55,18 +45,21 @@ void heading(std::string name)
 int main()
 {
 	ft::vector<int>			vect;
-	ft::map<int, int>			map;
-	ft::stack<int>				stack;
+	ft::map<int, int>		map;
+	ft::stack<int>			stack;
+	clock_t					start, end;
 	
      /* to be sure of the namespace used, you can uncomment this : */
 	// title(NAMESPACE);
      
+	start = clock();
 	vectorTests(vect);
 	mapTests(map);
 	stackTests(stack);
 	
 	std::cout << "END." << std::endl;
-	
+	end = clock();
+	std::cout << "Time: " << (double)(end - start) / CLOCKS_PER_SEC << "s" << std::endl;
 	return (0);
 }
 

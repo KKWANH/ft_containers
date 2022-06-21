@@ -1,21 +1,10 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   stackTests.hpp                                     :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: adbenoit <adbenoit@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/30 15:53:15 by adbenoit          #+#    #+#             */
-/*   Updated: 2021/09/29 12:34:48 by adbenoit         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #ifndef STACKTESTS_HPP
 # define STACKTESTS_HPP
 
 # include "modifiers.stack.hpp"
 # include "observers.stack.hpp"
 # include "operators.stack.hpp"
+# include "alotof.stack.hpp"
 
 void    title(std::string name);
 
@@ -44,6 +33,7 @@ void    stackTests(ft::stack<T,C>& stack)
 		stack.push(i);
 
 	ft_operators(stack);
+	ft_alotof(stack);
 }
 
 #endif
