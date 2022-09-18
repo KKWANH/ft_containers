@@ -57,8 +57,8 @@ int main()
 	mapTests(map);
 	stackTests(stack);
 	
-	//std::cout << "END." << std::endl;
-	//end = clock();
+	std::cout << "END." << std::endl;
+	end = clock();
 	//std::cout << "Time: " << (double)(end - start) / CLOCKS_PER_SEC << "s" << std::endl;
 	return (0);
 }
